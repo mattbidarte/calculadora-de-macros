@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <title>Calculadora Kcal y Macronutrientes</title>
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Kcal y Macronutrientes</h1>
+        <p>Calculos basados en el video de YT <a href="https://youtu.be/CCdZZeRH8II" target="_blank" rel="noopener noreferrer">Cómo Hacer Una Dieta Paso a Paso</a></p>
+    </header>
+    <main id="main">
+        <form action="" class="form">
+            <label for="peso">Peso en Kilos</label>
+            <input type="number" name="peso" id="peso">
+            <label for="">Factor de actividad</label>
+            <select name="factor" id="factor">
+                <option value="1.2">Ningun ejercico</option>
+                <option value="1.4">Ejercicio ligero (1-3d/sem)</option>
+                <option value="1.6">Ejercicio moderado (3-5d/sem)</option>
+                <option value="1.8">Ejercicio fuerte (6-7d-sem)</option>
+                <option value="2">Ejercicio muy fuerte (Dobles sesiones)</option>
+            </select>
+            <label for="objetivo">Objetivo:</label>
+            <select name="" id="objetivo">
+                <option value="ganar">Ganar masa</option>
+                <option value="perder">Perder grasa</option>
+            </select>
+
+            <button id="btnCalculo">Hacer calculo</button>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+    <script src="./assets/js/main.js"></script>
+</html>
