@@ -114,7 +114,7 @@ $btnPrimero.addEventListener('click', (e) => {
                     </table>
                     <p>Podes sacarle captura o anotarlo, ¡Suerte con tu objetivo!</p>
                     <p>Te recomiendo el uso de la app MyFitnessPal y que peses tus alimentos.</p>
-                    <p class="pfinal">Acá abajo te dejo mi rutina actual que me esta sirviendo mucho.</p>
+                    <p class="pfinal">Acá abajo te dejo mi rutina actual que me esta sirviendo mucho. 💪</p>
                     <a href="https://matiasbidarte.gumroad.com/l/mirutina" target="_blank"><button>Mi rutina 5 dias</button></a>
                     <button onclick="location.reload()">Volver a calcular</button>
                     `
@@ -196,7 +196,7 @@ $btnPrimero.addEventListener('click', (e) => {
                     </table>
                     <p>Podes sacarle captura o anotarlo, ¡Suerte con tu objetivo!</p>
                     <p>Te recomiendo el uso de la app MyFitnessPal y que peses tus alimentos.</p>
-                    <p class="pfinal">Acá abajo te dejo mi rutina actual que me esta sirviendo mucho.</p>
+                    <p class="pfinal">Acá abajo te dejo mi rutina actual que me esta sirviendo mucho 💪</p>
                     <a href="https://matiasbidarte.gumroad.com/l/mirutina" target="_blank"><button>Mi rutina 5 dias</button></a>
                     <button onclick="location.reload()">Volver a calcular</button>
                     `
