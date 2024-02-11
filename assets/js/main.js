@@ -1,18 +1,25 @@
 // ========== Variables HTML ==========
 const $main = document.querySelector('#main')
 const $btnPrimero = document.querySelector('#btnPrimero')
+const $header = document.querySelector('#header')
 
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobile-menu');
+    const menu = document.querySelector('.header__content-navbar');
+  
+    mobileMenuToggle.addEventListener('click', function() {
+      menu.classList.toggle('show');
+    });
+});
 
 $btnPrimero.addEventListener('click', (e) => {
     e.preventDefault()
-    const $header = document.querySelector('#header')
-    $header.style.display = 'none'
     $main.innerHTML = `
     <h2 style="font-size: 34px;">Tus datos</h2>
     <form action="" class="form">
-            <label for="peso">Peso en Kilos</label>
-            <input type="number" name="peso" id="peso" required>
-            <label for="">Factor de actividad</label>
+            <label for="peso">Peso en Kilos:</label>
+            <input type="number" name="peso" id="peso" placeholder="68" required>
+            <label for="">Factor de actividad:</label>
             <select name="factor" id="factor">
                 <option value="1.2">Ningun ejercico</option>
                 <option value="1.4">Ejercicio ligero (1-3d/sem)</option>
@@ -36,14 +43,18 @@ $btnPrimero.addEventListener('click', (e) => {
 
     $btnCalcular.addEventListener('click', (e) => {
         e.preventDefault()
-        let kcalBase = Math.trunc(($peso.value * 22) * $factor.value)
+        if($peso.value.trim() === ""){
+            alert("Por favor, ingrese su peso");
+        }else{
+            let kcalBase = Math.trunc(($peso.value * 22) * $factor.value)
         console.log(kcalBase);
 
         if ($objetivo. value == 'ganar') {
             $main.innerHTML = `
-            <h2>Las kcal para el mantenimiento de tu peso son: <strong>${kcalBase}kcal</strong></h2>
+            <h2>Las calorias para el mantenimiento de tu peso son: <strong>${kcalBase}kcal</strong></h2>
+            <p class="pexplicacion">Esto será cuanto aumentaremos las calorias diarias.</p>
             <form class="form">
-            <label for="porcentaje">Porcentaje de aumento de kcal:</label>
+            <label for="porcentaje">Porcentaje de aumento de calorias:</label>
             <select name="" id="porcentaje">
                 <option value="10">10% más</option>
                 <option value="15">15% más</option>
@@ -59,7 +70,7 @@ $btnPrimero.addEventListener('click', (e) => {
                 e.preventDefault()
                 kcalBase += Math.trunc(kcalBase * ($porcentaje.value/100))
                 $main.innerHTML = `
-                <h2>Las kcal para la ganancia de masa son: <strong>${kcalBase}</strong></h2>
+                <h2>Las calorias para la ganancia de masa muscular son: <strong>${kcalBase}kcal</strong></h2>
                 <p>Ahora calcularemos tus macronutrentes.</p>
                 <p>Puedes modificar los valores o dejarlos asi (recomendado).</p>
                 <form class="form">
@@ -112,10 +123,11 @@ $btnPrimero.addEventListener('click', (e) => {
                             </tr>
                         </tbody>
                     </table>
-                    <p>Podes sacarle captura o anotarlo, ¡Suerte con tu objetivo!</p>
-                    <p>Te recomiendo el uso de la app MyFitnessPal y que peses tus alimentos.</p>
-                    <p class="pfinal">Acá abajo te dejo mi rutina actual que me esta sirviendo mucho. 💪</p>
+                    <p>Podes sacarle captura o anotarlo, ¡Exitos con tu objetivo!</p>
+                    <p>Te recomiendo el uso de la app MyFitnessPal para registar tus comidas y que peses tus alimentos.</p>
+                    <p class="pfinal">Acá abajo te dejo mi rutina actual que me esta sirviendo mucho 💪</p>
                     <a href="https://matiasbidarte.gumroad.com/l/mirutina" target="_blank"><button>Mi rutina 5 dias</button></a>
+                    <a href="./pages/rutinas.html"><button>Todas las rutinas</button></a>
                     <button onclick="location.reload()">Volver a calcular</button>
                     `
                 })
@@ -123,7 +135,8 @@ $btnPrimero.addEventListener('click', (e) => {
 
         }else {
             $main.innerHTML = `
-            <h2>Las kcal para el mantenimiento de tu peso son: <strong>${kcalBase}</strong></h2>
+            <h2>Las calorias para el mantenimiento de tu peso son: <strong>${kcalBase}</strong></h2>
+            <p class="pexplicacion">Esto será cuanto reduciremos las calorias diarias.</p>
             <form class="form">
                 <label for="porcentaje">Porcentaje de perdida:</label>
                 <select name="" id="porcentaje">
@@ -141,7 +154,7 @@ $btnPrimero.addEventListener('click', (e) => {
                 e.preventDefault()
                 kcalBase -= Math.trunc(kcalBase * ($porcentaje.value/100))
                 $main.innerHTML = `
-                <h2>Las kcal para la perdida de grasa son: <strong>${kcalBase}</strong></h2>
+                <h2>Las calorias para la perdida de grasa son: <strong>${kcalBase}kcal</strong></h2>
                 <p>Ahora calcularemos tus macronutrentes.</p>
                 <p>Puedes modificar los valores o dejarlos asi (recomendado).</p>
                 <form class="form">
@@ -194,10 +207,11 @@ $btnPrimero.addEventListener('click', (e) => {
                             </tr>
                         </tbody>
                     </table>
-                    <p>Podes sacarle captura o anotarlo, ¡Suerte con tu objetivo!</p>
-                    <p>Te recomiendo el uso de la app MyFitnessPal y que peses tus alimentos.</p>
+                    <p>Podes sacarle captura o anotarlo, ¡Exitos con tu objetivo!</p>
+                    <p>Te recomiendo el uso de la app MyFitnessPal para registar tus comidas y que peses tus alimentos.</p>
                     <p class="pfinal">Acá abajo te dejo mi rutina actual que me esta sirviendo mucho 💪</p>
                     <a href="https://matiasbidarte.gumroad.com/l/mirutina" target="_blank"><button>Mi rutina 5 dias</button></a>
+                    <a href="./pages/rutinas.html"><button>Todas las rutinas</button></a>
                     <button onclick="location.reload()">Volver a calcular</button>
                     `
 
@@ -205,5 +219,7 @@ $btnPrimero.addEventListener('click', (e) => {
 
             })
         }
+        }
+        
     })
 })

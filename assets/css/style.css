@@ -1,20 +1,137 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* ================ RESET ================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+
 body {
-    background-color: var(--gris);
+    background-color: rgb(247, 247, 247);
     font-family: 'Poppins', sans-serif;
-    height: 100vh;
-    width: 80%;
+    min-height: 100vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.max-width {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+/* ================ HEADER ================ */
+.header {
+    height: 60px;
+    width: 100%;
+    background-color: #353535;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+}
+
+.header__content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__content-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__content-inicio{
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid transparent;
+}
+
+.header__content-navbar-item {
+    margin: 0 20px;
+    color: rgb(255, 255, 255);
+}
+
+.header__content a:hover{
+    border-bottom: 1px solid #ffffff;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    display: none;
+}
+  
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+/* ================ MAIN ================ */
+main {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    line-height: 35px;
+    margin-bottom: 40px;
+    margin-top: 60px; 
+}
+
+h2 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+}
+
+i{
+    font-size: 22px;
+    padding-right: 10px;
+}
+
+.pfinal {
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+.pexplicacion{
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
 button {
@@ -23,7 +140,6 @@ button {
     border-radius: 13px;
     box-sizing: border-box;
     color: #ffffff;
-    cursor: pointer;
     display: inline-flex;
     flex: 1 1 auto;
     font-family: Inter,sans-serif;
@@ -36,7 +152,6 @@ button {
     text-decoration: none;
     transition: box-shadow .2s,-webkit-box-shadow .2s;
     white-space: nowrap;
-    border: 0;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
@@ -50,30 +165,7 @@ button:hover {
     transform: translateY(-3px);
 }
 
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
-
-input {
-    /* border: none; */
-    outline: none;
-    border-radius: 5px;
-}
-
-header {
-    text-align: center;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* ================ FORM ================ */
 
 .form {
     display: flex;
@@ -84,9 +176,13 @@ main {
     margin-top: 10px;
 }
 
-p {
-    text-align: center;
+input {
+    outline: none;
+    border-radius: 5px;
     font-size: 18px;
+    font-weight: normal;
+    border-width: 1px;
+    padding: 2px
 }
 
 label {
@@ -95,27 +191,14 @@ label {
     font-weight: normal;
 }
 
-input {
-    font-size: 18px;
-    font-weight: normal;
-}
-
 select {
     font-size: 18px;
     border-radius: 5px;
     font-weight: normal;
+    padding: 2px
 }
 
-h1 {
-    line-height: 35px;
-    margin-bottom: 40px;
-}
-
-h2 {
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
+/* ================ TABLE ================ */
 
 table,
 td {
@@ -138,10 +221,7 @@ table {
     width: 70%;
 }
 
-i{
-    font-size: 22px;
-    padding-right: 10px;
-}
+/* ================ ANIMACION ================ */
 
 @keyframes aparecer {
     from {
@@ -151,9 +231,116 @@ i{
     to {
         opacity: 100;
     }
-  }
-
-.pfinal {
-    margin-top: 30px;
-    font-weight: 700;
 }
+
+/* ================ PAGES ================ */
+
+/* ================ RUTINAS ================ */
+.rutina__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 70px;
+    justify-items: center;
+    align-items: center;
+    margin: 100px 0px;
+}
+
+.rutina__content-item {
+    width: 320px;
+}
+
+.rutina__content-item > img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.rutina__content-item > h3 {
+    color: #000000;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    margin: 20px 0 10px;
+}
+
+.rutina__content-item > p {
+    color: #333;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.iconos {
+    width: 200px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.iconos i {
+    font-size: 35px;
+}
+
+/* ================ TAMAÑOS ================ */
+@media screen and (max-width: 1400px) {
+    .max-width {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .rutina__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .rutina__content {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .rutina__content-item {
+        width: 509px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .max-width {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rutina__content-item {
+        width: 100%;
+    }
+
+    .header__content-navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      justify-content: flex-start;
+      padding-top: 70px;
+      right: 0;
+      width: 50%;
+      height: 100vh;
+      background-color: #353535;
+    }
+
+    .header__content-navbar.show {
+      display: flex;
+      flex-direction: column;
+    }
+    .header__content-navbar.show li{
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+    .menu-toggle {
+      display: block;
+    }
+
+  }
