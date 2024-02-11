@@ -52,7 +52,6 @@ $btnPrimero.addEventListener('click', (e) => {
         if ($objetivo. value == 'ganar') {
             $main.innerHTML = `
             <h2>Las calorias para el mantenimiento de tu peso son: <strong>${kcalBase}kcal</strong></h2>
-            <p class="pexplicacion">Esto será cuanto aumentaremos las calorias diarias.</p>
             <form class="form">
             <label for="porcentaje">Porcentaje de aumento de calorias:</label>
             <select name="" id="porcentaje">
@@ -60,6 +59,7 @@ $btnPrimero.addEventListener('click', (e) => {
                 <option value="15">15% más</option>
                 <option value="20">20% más</option>
             </select>
+            <p class="pexplicacion">Esto será cuanto aumentaremos las calorias diarias.</p>
             <button id="btnPorcentaje">Hacer calculo</button>
             </form>
             `
@@ -80,7 +80,7 @@ $btnPrimero.addEventListener('click', (e) => {
                     <label for="">Grasas:</label>
                     <input type="range" min="0.5" max="1.5" step="0.1" name="" id="grasas" oninput="this.nextElementSibling.value = this.value" value="1">
                     <output>1</output>
-                    <p>Los carbohidratos son las kcal restantes</p>
+                    <p class="pexplicacion">Los carbohidratos son las kcal restantes</p>
                     <button id="btnMostrarMacros">Mostrar mis macros</button>
                 </form>
                 `
@@ -136,7 +136,6 @@ $btnPrimero.addEventListener('click', (e) => {
         }else {
             $main.innerHTML = `
             <h2>Las calorias para el mantenimiento de tu peso son: <strong>${kcalBase}</strong></h2>
-            <p class="pexplicacion">Esto será cuanto reduciremos las calorias diarias.</p>
             <form class="form">
                 <label for="porcentaje">Porcentaje de perdida:</label>
                 <select name="" id="porcentaje">
@@ -144,6 +143,7 @@ $btnPrimero.addEventListener('click', (e) => {
                     <option value="20">20% menos</option>
                     <option value="30">30% menos</option>
                 </select>
+                <p class="pexplicacion">Esto será cuanto reduciremos las calorias diarias.</p>
                 <button id="btnPorcentaje">Hacer calculo</button>
             </form>
             `

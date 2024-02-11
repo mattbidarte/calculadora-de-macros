@@ -155,10 +155,13 @@ button {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    animation-duration: 1s;
-    animation-name: aparecer;
+    animation: aparecer 1s;
     margin-top: 30px;
 
+}
+
+.button-35 {
+    animation: moveRight 3s linear infinite;
 }
   
 button:hover {
@@ -233,6 +236,24 @@ table {
     }
 }
 
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    75% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
 /* ================ PAGES ================ */
 
 /* ================ RUTINAS ================ */
@@ -243,7 +264,7 @@ table {
     row-gap: 70px;
     justify-items: center;
     align-items: center;
-    margin: 100px 0px;
+    margin-top: 100px;
 }
 
 .rutina__content-item {
