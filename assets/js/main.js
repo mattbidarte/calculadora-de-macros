@@ -1,4 +1,4 @@
-console.error("¿Que haces mirando esto?");
+console.error("¿Qué haces mirando esto?");
 
 document.getElementById('emailForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevenir el envío predeterminado
@@ -10,20 +10,16 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
         body: formData,
     })
     .then(response => {
-        console.log(response)
         if (response.ok) {
-            Toastify({
-                text: "¡Correo guardado con éxito!",
-                duration: 3000,
-                close: true,
-                gravity: "top",
-                position: 'right',
-                backgroundColor: "green",
-            }).showToast();
+            // Almacenar indicador en localStorage
+            localStorage.setItem('emailSuccess', 'true');
+            
+            // Redirigir a emailAceptado.html inmediatamente
+            window.location.href = '../pages/emailAceptado.html';
         } else {
             Toastify({
-                text: "Error al guardar el correo.",
-                duration: 3000,
+                text: "Error al guardar el correo, volve a intentarlo.",
+                duration: 5000,
                 close: true,
                 gravity: "top",
                 position: 'right',
@@ -34,8 +30,8 @@ document.getElementById('emailForm').addEventListener('submit', function(event) 
     .catch(error => {
         console.error('Error:', error);
         Toastify({
-            text: "Error en la conexión.",
-            duration: 3000,
+            text: "Error inesperado, volve a intentarlo.",
+            duration: 5000,
             close: true,
             gravity: "top",
             position: 'right',

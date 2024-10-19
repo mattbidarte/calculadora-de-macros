@@ -9,7 +9,6 @@
 }
 
 body {
-    background-color: rgb(255, 255, 255);
     font-family: 'Lato', sans-serif;
     height: 100%;
     display: flex;
@@ -67,5 +66,11 @@ main {
 
 .iconos i {
     font-size: 25px;
+    color: #dee2e6;
+}
+
+.iPrincipal {
+    font-size: 50px;
+    padding-bottom: 20px;
 }
 
