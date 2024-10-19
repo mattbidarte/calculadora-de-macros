@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="icon" href="./assets/img/calculator-icon_34473.ico" type="image/x-icon">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-    <title>Calculadora Macronutrientes</title>
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Calculamacros | Renovandose</title>
 </head>
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) google analitcs -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EE7Y5RJQ0L"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -23,51 +24,25 @@
 </script>
 
 <body>
-    <header id="header" class="header">
-        <div class="header__content max-width">
-            <a class="header__content-inicio" onclick="location.reload()">CALCULADORA</a>
-            <nav>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="header__content-navbar">
-                    <li><a href="./pages/rutinas.html" class="header__content-navbar-item">RUTINAS</a></li>
-                    <li><a href="./pages/recursos.html" class="header__content-navbar-item">RECURSOS</a></li>
-                    <li><a href="./pages/acercade.html" class="header__content-navbar-item">ACERCA DE</a></li>
-                </ul>
-            </nav>
+    <main id="main">
+        <div class="container">
+            <h1 class="text-center">Calculamacros está en remodelacion</h1>
+            <p class="text-center">Si queres podes dejar tu correo para que te notifique cuando este lista.</p>
+            <form class="container formContainer" id="emailForm" style="max-width: 400px;" netlify>
+                <input type="hidden" name="formEmail" value="newsletterSignup" />
+                <input type="email" class="form-control" id="email" name="email" placeholder="Ingresa tu email" style="border-radius: 5%;" required>
+                <button type="submit" class="btn btn-primary w-100" style="max-width: 100px; border-radius: 5%;">Enviar</button>
+            </form> 
+            
+            <div class="iconos">
+                <a href="https://www.instagram.com/mattbigym/" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="mailto:matias.bidarte@outlook.com" target="_blank"><i class="bi bi-envelope"></i></a>
+                <a href="https://github.com/mattbidarte"><i target="_blank" class="bi bi-github"></i></a>
+            </div>
         </div>
-    </header>
-
-    <main id="main" class="max-width">
-        <h1>Calculadora de Macronutrientes</h1>
-        <p>Calculadora de macronutrientes hecha especialmente para que logres tu objetivo.</p>
-        <button id="btnPrimero" class="button-35" role="button"><i class="bi bi-arrow-right-circle"></i>Calcular mis macros </button>
     </main>
-    
-    <footer>
-        <div class="max-width">
-
-        </div>
-        <p class="pfooter">Podes realizar una donacion tocando este boton</p>
-        <div id="donate-button-container">
-            <div id="donate-button"></div>
-            <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-            <script>
-            PayPal.Donation.Button({
-            env:'production',
-            hosted_button_id:'FSNV9DL544ZUG',
-            image: {
-            src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
-            alt:'Donate with PayPal button',
-            title:'PayPal - The safer, easier way to pay online!',
-            }
-            }).render('#donate-button');
-            </script>
-        </div>    
-    </footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="./assets/js/main.js"></script>
 </html>
